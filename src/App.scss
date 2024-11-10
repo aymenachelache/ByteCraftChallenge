@@ -1,0 +1,63 @@
+.body {
+    position: relative;
+    .box {
+        width: 60%;
+        margin: auto;
+        z-index: 5;
+        @media (max-width: 768px) { 
+            width: 90%;
+            margin-top: 70px;
+        }
+        .left {
+            background-image: url("./assets/bg-sidebar-desktop.svg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            @media (max-width: 768px) { 
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                z-index: -55;
+                padding-bottom: 30px;
+                background-image: url("./assets/bg-sidebar-mobile.svg");
+                background-size: cover;
+                ol {
+                    margin-bottom: 50px;
+                    padding-bottom: 20px;
+                }
+            }
+        }
+        .right {
+            @media (max-width: 768px) { 
+                border-radius: 0.5rem;
+            }
+        }
+    }
+}
+
+
+input[type="number"] {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid #ccc; // Bordure fixe pour éviter l'effet flash
+    background-color: transparent;
+  
+    // Focus personnalisé sans flash
+    &:focus {
+      border-color: #888; // Couleur de bordure discrète pour le focus
+      background-color: transparent;
+      transition: border-color 0.2s ease;
+    }
+  
+    // Masquer les flèches de réglage dans le champ de nombre
+    /* Chrome, Safari, Edge, Opera */
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  
+    /* Firefox */
+    -moz-appearance: textfield;
+  }
+  
